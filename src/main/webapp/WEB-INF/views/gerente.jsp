@@ -43,6 +43,15 @@
 					$scope.message = "Aconteceu um problema: " + data;
 				});
 			}
+			
+			$scope.zerarSenhas = function() {
+				$http.get("http://localhost:8080/gerente/zerar-contador").success(function (data) {
+					$scope.message = "Painel Zerado com sucesso";
+
+			}).error(function (data, status) {
+				$scope.message = "Aconteceu um problema: " + data;
+			});
+		}
 
 			
 		});	    
@@ -75,13 +84,13 @@
 	<!--	<td ng-repeat="(key, value) in contato"> {{value}} </td> -->
   	
   		
-  		<td class="form-control"> {{senha.mascaraSenha}}</td>
+  		<td class="form-control">{{senha.mascaraSenha}}</td>
  
   </tr>
       </table>
 
   			<button class="btn form-control btn-primary btn-lg" ng-click="proximaSenha()">Próxima Senha</button>
-			<button class="btn form-control btn-primary btn-lg" onclick="zerarSenhas()">Zerar contador Senhas</button>
+			<button class="btn form-control btn-primary btn-lg" ng-click="zerarSenhas()">Zerar contador Senhas</button>
 
 
     </div>

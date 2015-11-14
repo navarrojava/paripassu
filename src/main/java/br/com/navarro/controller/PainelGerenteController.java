@@ -7,11 +7,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import br.com.navarro.model.Message;
 import br.com.navarro.model.Senha;
 import br.com.navarro.service.IPainelGerenteService;
-
+/**
+ * 
+ * @author navarro
+ *
+ */
 @Controller
 @RequestMapping("gerente")
 public class PainelGerenteController {
@@ -23,7 +30,6 @@ public class PainelGerenteController {
 
 	@RequestMapping("home")
 	public String homeGerente() {
-
 		return "gerente";
 	}
 
@@ -32,7 +38,6 @@ public class PainelGerenteController {
 	public Senha ChamarProximaSenha() {
 		LOG.info("Chamada de Nova Senha");
 		return iPainelGerenteService.chamaProximaSenha();
-		
 	}
 
 	@RequestMapping("todas-as-senhas")
@@ -41,15 +46,14 @@ public class PainelGerenteController {
 		return iPainelGerenteService.todasAsSenhas();
 	}
 
-	@RequestMapping("zerar-contaor")
-	public void zerarContador(){
-		iPainelGerenteService.zeraContadorSenha();
+	@RequestMapping(value="zerar-contador",  method = RequestMethod.GET)
+	public @ResponseBody Message zerarContador(){
+		return iPainelGerenteService.zeraContadorSenha();
+		
 	}
-	
 	
 	@RequestMapping("painel")
 	public String painel() {
-
 		return "painel";
 	}
 }

@@ -6,7 +6,11 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import br.com.navarro.model.Senha;
-
+/**
+ * 
+ * @author navarro
+ *
+ */
 @Component
 public class MemoryDatabase {
 
@@ -52,6 +56,34 @@ public class MemoryDatabase {
 		return senha1;
 	}
 
-	/* Getters e Setters */
 
+
+	
+	/* Getters e Setters */
+	
+	public List<Senha> getSenhasNormais() {
+		return senhasNormais;
+	}
+
+
+
+	public void setSenhasNormais(List<Senha> senhasNormais) {
+		this.senhasNormais = senhasNormais;
+	}
+
+
+
+	public List<Senha> getSenhasPreferenciais() {
+		return senhasPreferenciais;
+	}
+
+
+
+	public void setSenhasPreferenciais(List<Senha> senhasPreferenciais) {
+		this.senhasPreferenciais = senhasPreferenciais;
+	}
+
+
+	
+	
 }

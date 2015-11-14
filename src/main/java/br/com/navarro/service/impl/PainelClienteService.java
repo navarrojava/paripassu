@@ -30,8 +30,8 @@ public class PainelClienteService implements IPainelClienteService {
 		return senha;
 	}
 
+	
 	/* Getetrs e Setters */
-
 	public int getContadorNormal() {
 		return contadorNormal;
 	}
@@ -47,5 +47,4 @@ public class PainelClienteService implements IPainelClienteService {
 	public void setContadorPreferencial(int contadorPreferencial) {
 		this.contadorPreferencial = contadorPreferencial;
 	}
-
 }

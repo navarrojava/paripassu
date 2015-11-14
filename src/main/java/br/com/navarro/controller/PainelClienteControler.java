@@ -8,7 +8,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.navarro.model.Senha;
 import br.com.navarro.service.IPainelClienteService;
-
+/**
+ * 
+ * @author navarro
+ *
+ */
 @Controller
 @RequestMapping("cliente")
 public class PainelClienteControler {
@@ -21,8 +25,6 @@ public class PainelClienteControler {
 		
 		return "cliente";
 	}
-	
-	
 	
 	
 	@RequestMapping("solicitar-senha")
