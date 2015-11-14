@@ -13,7 +13,7 @@ O Projeto já está configurado com o plugin do container Tomcat7.
 O CORS está habilitado, para integração com arquitetura REST.
 
 <b>Atencão:</b> 
-O Corsesta habilitado para aceitar requisiçoes te "qualquer" dominio 
+Neste projeto o Cors esta habilitado para aceitar requisiçoes de "qualquer" dominio. <p/>
 Caso queira alterar esta configuração por segurança va até a classe CORSFilter,
 no pacote filter e modifique : <p/>
 response.addHeader("Access-Control-Allow-Origin", "*"); <p/>
