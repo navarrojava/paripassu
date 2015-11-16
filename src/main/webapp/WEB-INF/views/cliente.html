@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=500, user-scalable=yes">
 <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 <link rel="stylesheet" href="/resources/css/custom.css">
-<script src="/resources/js/angular.min.js"></script>
+<script src="/resources/js/angular.min.js"></script> 
 <script src="/resources/js/clienteCtrl.js"></script>
 
 <title>Gerenciador de senhas - PariPassu</title>
@@ -33,8 +33,8 @@
 				<td class="form-control">{{senha.mascaraSenha}}</td>
 			</tr>
 		</table>
-		<button class="btn btn-primary btn-block" ng-click="solicitarSenha('NORMAL')">NORMAL</button>
-		<button class="btn btn-warning btn-block" ng-click="solicitarSenha('PREFERENCIAL')">PREFERENCIAL</button>
+		<button class="btn btn-primary btn-block" ng-disabled="minhaSenha.mascaraSenha != A0000" ng-click="solicitarSenha('NORMAL')">NORMAL</button>
+		<button class="btn btn-warning btn-block" ng-disabled="minhaSenha.mascaraSenha != A0000" ng-click="solicitarSenha('PREFERENCIAL')">PREFERENCIAL</button>
 	</div>
 </body>
 </html>
