@@ -5,6 +5,8 @@ angular.module("gerenciador",[]);
 			$scope.senhas = [];
 			$scope.quantidade = 1;
 			$scope.teste = [];
+			$scope.possuiSenha = false;
+			
 			$scope.minhaSenha = JSON.parse(localStorage.getItem("senha"));
 			$scope.verificaSeFuiChamado = function(){
 				 if   ( JSON.stringify(localStorage.getItem("senha")).length > 0 && localStorage.getItem("senha")) {
@@ -30,7 +32,8 @@ angular.module("gerenciador",[]);
 					if (data == undefined || !data){
 						$scope.message = "Não há nimguém na fila";
 						$scope.senhas = "";
-						 $scope.minhaSenha.mascaraSenha = "A0000";
+						$scope.minhaSenha.mascaraSenha = "A0000";
+						$scope.possuiSenha = false;
 					}else{
 						$scope.message = "";
 						$scope.senhas = data;
@@ -43,6 +46,7 @@ angular.module("gerenciador",[]);
 			$scope.solicitarSenha = function(tipoSenha) {
 				$http.get("http://localhost:8080/cliente/solicitar-senha?tipo="+tipoSenha).success(function (data) {
 					$scope.minhaSenha = data;
+					$scope.possuiSenha = true;
 					localStorage.setItem("senha", JSON.stringify($scope.minhaSenha));
 					$scope.teste = localStorage.getItem("senha");
 
