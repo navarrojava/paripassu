@@ -29,7 +29,7 @@ para: <br/>
 response.addHeader("Access-Control-Allow-Origin", "seudominio.foo.bar"); <p/>
 
  
-                                                                                <b>Navarro Ferreira</b>
+                                                                                Navarro Ferreira
 
 
 
