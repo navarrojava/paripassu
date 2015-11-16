@@ -20,6 +20,9 @@ Se utilizar a IDE Eclipse vá até a opção:
 O Projeto já está configurado com o plugin do container Tomcat7.
 O CORS está habilitado, para integração com arquitetura REST.
 
+   * o home fica em http://localhost:8080
+   * Para a tela de cliente acessar o endereço http://localhost:8080/ng/cliente.html .
+
 <b>Atencão:</b> 
 Neste projeto o Cors esta habilitado para aceitar requisiçoes de "qualquer" dominio. <p/>
 Caso queira alterar esta configuração por segurança va até a classe CORSFilter,
