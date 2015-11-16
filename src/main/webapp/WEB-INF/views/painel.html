@@ -1,37 +1,16 @@
 <!DOCTYPE html>
-<html ng-app="navarro">
+<html ng-app="gerenciador">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=500, user-scalable=no">
 <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 <link rel="stylesheet" href="/resources/css/custom.css" />
 <script src="/resources/js/angular.min.js"></script>
-<script type="text/javascript">
-		angular.module("navarro",[]);
-		angular.module("navarro").controller("navarroCtrl", function  ($scope, $http) {
+<script src="/resources/js/painelCtrl.js"></script>
 
-			$scope.titulo = "Aguarde ser chamado";
-			$scope.senhas = [];
-			$scope.quantidade = 1;
-
-			var intervalo = window.setInterval ( function () {
-					$http.get("http://localhost:8080/gerente/todas-as-senhas").success(function (data) {
-						if (data == undefined || !data){
-							$scope.message = "Não há nimguém na fila";
-							$scope.senhas = "";
-						}else{
-							$scope.message = "";
-							$scope.senhas = data;
-						}
-				}).error(function (data, status) {
-					$scope.message = "Aconteceu um problema: " + data;
-				});
-			}, 1000);
-		});	    
-	</script>
-<title>Angular JS @Navarro</title>
+<title>Gerenciador de senhas - PariPassu</title>
 </head>
-<body ng-controller="navarroCtrl">
+<body ng-controller="painelCtrl">
 	<div class="jumbotron">
 		<div>
 			<h2>{{titulo}}</h2>
