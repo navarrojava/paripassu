@@ -23,10 +23,13 @@ O CORS está habilitado, para integração com arquitetura REST.
 <b>Atencão:</b> 
 Neste projeto o Cors esta habilitado para aceitar requisiçoes de "qualquer" dominio. <p/>
 Caso queira alterar esta configuração por segurança va até a classe CORSFilter,
-no pacote filter e modifique : 
-response.addHeader("Access-Control-Allow-Origin", "*"); <p/>
-para: <p/>
-response.addHeader("Access-Control-Allow-Origin", "seudominio.foo.bar");
+no pacote filter e modifique : <br/>
+response.addHeader("Access-Control-Allow-Origin", "*"); <br/>
+para: <br/>
+response.addHeader("Access-Control-Allow-Origin", "seudominio.foo.bar"); <p/>
+
+ 
+                                                                                   Navarro Ferreira
 
 
 
