@@ -1,24 +1,28 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="false"%>
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Oraculo</title>
-		<link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.min.css" /> " /> 
-		<link rel="stylesheet" href="<c:url value="/resources/css/estilo.css"/> " /> 
-		
-		<script src="<c:url value="/resources/js/jquery-1.11.3.min.js" />"type="text/javascript"></script>
-		<script src="<c:url value="/resources/js/bootstrap.min.js" />" type="text/javascript"></script>
-	</head>
-	<body>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oraculo</title>
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/bootstrap.min.css" /> " />
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/estilo.css"/> " />
 
-<div class="container">
+<script src="<c:url value="/resources/js/jquery-1.11.3.min.js" />"
+	type="text/javascript"></script>
+<script src="<c:url value="/resources/js/bootstrap.min.js" />"
+	type="text/javascript"></script>
+</head>
+<body>
 
-<script type="text/javascript">
+	<div class="container">
+
+		<script type="text/javascript">
 
     var ws = new WebSocket("ws://localhost:8080/navarro/websocket");
         
@@ -197,122 +201,126 @@ function habBtParaInteracao(){
 
 });
 </script>
-  
-  <div class="panel-group  ">
- 
-  	 <div class="col-xs-12 col-sm-3 col-lg-3">
 
-    		<div class="panel panel-default">
-      		
-      		<div class="panel-body" style="height:620px" id="hall" >
+		<div class="panel-group  ">
 
-            <div class="row eventohall classParaRemover1" data-id-evento="1">
-                <button class="btn btn-primary" type="button"   style="height:50px;width:100%">
-                    -- TESTE1--- <span class="badge">1</span>
-                </button>
-            </div>
+			<div class="col-xs-12 col-sm-3 col-lg-3">
 
-            <div class="row eventohall classParaRemover2" data-id-evento="2" >
-                <button class="btn btn-danger" type="button"  style="height:50px;width:100%">
-                    -- TESTE2--- <span class="badge">2</span>
-                </button>
-            </div>
+				<div class="panel panel-default">
 
-             <div class="row eventohall classParaRemover3" data-id-evento="3">
-                <button class="btn btn-success" type="button"   style="height:50px;width:100%">
-                    -- TESTE3--- <span class="badge">3</span>
-                </button>
-            </div>
+					<div class="panel-body" style="height: 620px" id="hall">
 
-            <div class="row eventohall classParaRemover4" data-id-evento="4" >
-                <button class="btn btn-warning" type="button"  style="height:50px;width:100%">
-                    -- TESTE4--- <span class="badge">4</span>
-                </button>
-            </div>
+						<div class="row eventohall classParaRemover1" data-id-evento="1">
+							<button class="btn btn-primary" type="button"
+								style="height: 50px; width: 100%">
+								-- TESTE1--- <span class="badge">1</span>
+							</button>
+						</div>
 
-          </div>
-          <div class="panel-footer">
-            <button class="btn btn-primar" type="button"  style="height:50px;width:100%" id="btEnviaAtendimento">
-                  EVNIA PARA DIR <span class="badge" id="badgeEnviaAtendimento">0</span>
-              </button>
-          </div>
-    	</div>
-   	</div>
+						<div class="row eventohall classParaRemover2" data-id-evento="2">
+							<button class="btn btn-danger" type="button"
+								style="height: 50px; width: 100%">
+								-- TESTE2--- <span class="badge">2</span>
+							</button>
+						</div>
 
-   	 <div class="col-xs-12 col-sm-3 col-lg-3">
-    		<div class="panel panel-default">
-      			
-      		<div class="panel-body" id="atendimento" style="height:620px">
+						<div class="row eventohall classParaRemover3" data-id-evento="3">
+							<button class="btn btn-success" type="button"
+								style="height: 50px; width: 100%">
+								-- TESTE3--- <span class="badge">3</span>
+							</button>
+						</div>
+
+						<div class="row eventohall classParaRemover4" data-id-evento="4">
+							<button class="btn btn-warning" type="button"
+								style="height: 50px; width: 100%">
+								-- TESTE4--- <span class="badge">4</span>
+							</button>
+						</div>
+
+					</div>
+					<div class="panel-footer">
+						<button class="btn btn-primar" type="button"
+							style="height: 50px; width: 100%" id="btEnviaAtendimento">
+							EVNIA PARA DIR <span class="badge" id="badgeEnviaAtendimento">0</span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-3 col-lg-3">
+				<div class="panel panel-default">
+
+					<div class="panel-body" id="atendimento" style="height: 620px">
+
+
+
+					</div>
+
+
+					<div class="panel-footer">
+						<button class="btn btn-primar" type="button"
+							style="height: 50px; width: 100%" id="btEnviaDeslocamento">
+							EVNIA PARA DIR <span class="badge" id="badgeEnviaDeslocamento">0</span>
+						</button>
+					</div>
+
+
+				</div>
+			</div>
+
+
+
+
+
+
+
+			<div class="col-xs-12 col-sm-3 col-lg-3">
+				<div class="panel panel-default">
+
+					<div class="panel-body" id="deslocamento" style="height: 620px">
+
+
+
+					</div>
+
+
+					<div class="panel-footer">
+						<button class="btn btn-primar" type="button"
+							style="height: 50px; width: 100%" id="btEnviaObservacao">
+							EVNIA PARA DIR <span class="badge" id="badgeEnviaObservacao">0</span>
+						</button>
+					</div>
+
+
+				</div>
+			</div>
+
+
+
+			<div class="col-xs-12 col-sm-3 col-lg-3">
+				<div class="panel panel-default">
+
+					<div class="panel-body" id="observacao" style="height: 620px">
+
+
+					</div>
+
+
+
+					<div class="panel-footer">
+						<button class="btn btn-primar" type="button"
+							style="height: 50px; width: 100%" id="btGeraEvento"
+							onclick="start()">
+							GERA EVENTO<span class="badge" id="badgeEnviaObservacao">0</span>
+						</button>
+					</div>
+
+
 
 
 
 				</div>
-
-
-         <div class="panel-footer">
-            <button class="btn btn-primar" type="button"  style="height:50px;width:100%" id="btEnviaDeslocamento">
-                  EVNIA PARA DIR <span class="badge" id="badgeEnviaDeslocamento">0</span>
-              </button>
-          </div>
-
-
-    	</div>
-   	</div>
-
-
-
-
-
-
-
-   <div class="col-xs-12 col-sm-3 col-lg-3">
-        <div class="panel panel-default">
-            
-          <div class="panel-body" id="deslocamento" style="height:620px">
-
-
-
-        </div>
-
-
-         <div class="panel-footer">
-            <button class="btn btn-primar" type="button"  style="height:50px;width:100%" id="btEnviaObservacao">
-                  EVNIA PARA DIR <span class="badge" id="badgeEnviaObservacao">0</span>
-              </button>
-          </div>
-
-
-      </div>
-    </div>
-
-
-
-   <div class="col-xs-12 col-sm-3 col-lg-3">
-        <div class="panel panel-default">
-            
-          <div class="panel-body" id="observacao" style="height:620px">
-          
-
-          </div>
-
-
-          
-      <div class="panel-footer">
-         <button class="btn btn-primar" type="button"  style="height:50px;width:100%" id="btGeraEvento" onclick="start()">
-                  GERA EVENTO<span class="badge" id="badgeEnviaObservacao">0</span>
-              </button>
-          </div>
-
-    
-
-
-   
-  </div>
-</div>
-
-
-
-
+			</div>
 </body>
 </html>
- 

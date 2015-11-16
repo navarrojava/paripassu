@@ -1,8 +1,14 @@
 package br.com.navarro.model;
 
 public class Cliente extends Usuario {
-	
-	
-	Senha senha;
 
+	private Senha senha;
+
+	public Senha getSenha() {
+		return senha;
+	}
+
+	public void setSenha(Senha senha) {
+		this.senha = senha;
+	}
 }

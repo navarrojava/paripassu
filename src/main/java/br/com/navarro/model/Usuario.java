@@ -2,10 +2,8 @@ package br.com.navarro.model;
 
 public class Usuario {
 	
-	Long id;
+	private Long id;
 
-	
-	
 	public Long getId() {
 		return id;
 	}
@@ -13,5 +11,4 @@ public class Usuario {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 }

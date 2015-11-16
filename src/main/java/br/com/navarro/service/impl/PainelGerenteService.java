@@ -14,35 +14,26 @@ import br.com.navarro.service.IPainelGerenteService;
 @Service
 public class PainelGerenteService implements IPainelGerenteService {
 
-	@Autowired MemoryDatabase memoryDatabase;
-	@Autowired Senha senha;
-	@Autowired IPainelClienteService iPainelClienteService;
+	@Autowired
+	MemoryDatabase memoryDatabase;
+	@Autowired
+	IPainelClienteService iPainelClienteService;
 
 	@Override
 	public Senha chamaProximaSenha() {
-		senha = memoryDatabase.proximaSenha();
-		return senha;
+		return memoryDatabase.proximaSenha();
 	}
 
 	@Override
 	public List<Senha> todasAsSenhas() {
-		List<Senha> ads = memoryDatabase.todasAsSenha();
-		return ads;
+		return memoryDatabase.todasAsSenhas();
 	}
 
 	@Override
 	public Message zeraContadorSenha() {
-
-		try {
-			memoryDatabase.setSenhasNormais(null);
-			memoryDatabase.setSenhasPreferenciais(null);
-			iPainelClienteService.setContadorNormal(0);
-			iPainelClienteService.setContadorPreferencial(0);
-		} catch (Exception e) {
-			
-		}
-		
-		return new Message(1, "Painel Zerado Com Sucesso");
+		memoryDatabase.deletaTodasAsSenhas();
+		iPainelClienteService.setContadorNormal(0);
+		iPainelClienteService.setContadorPreferencial(0);
+		return new Message(1, "Painel zerado com sucesso!");
 	}
-
 }

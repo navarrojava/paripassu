@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.navarro.model.Message;
@@ -22,38 +21,34 @@ import br.com.navarro.service.IPainelGerenteService;
 @Controller
 @RequestMapping("gerente")
 public class PainelGerenteController {
-	private static final Logger LOG = LoggerFactory.getLogger(PainelClienteControler.class);
 
-	
+	private static final Logger LOGGER = LoggerFactory.getLogger(PainelClienteControler.class);
+
 	@Autowired
 	IPainelGerenteService iPainelGerenteService;
 
 	@RequestMapping("home")
 	public String homeGerente() {
-		return "gerente";
+		return  "redirect:/ng/gerente.html";
 	}
 
 	@RequestMapping("proxima-senha")
 	@ResponseBody	
 	public Senha ChamarProximaSenha() {
-		LOG.info("Chamada de Nova Senha");
+		LOGGER.info("Chamada de nova senha - ChamarProximaSenha() ");
 		return iPainelGerenteService.chamaProximaSenha();
 	}
 
 	@RequestMapping("todas-as-senhas")
 	@ResponseBody
 	public List<Senha> todasAsSenhas() {
+		LOGGER.info("Todas as senhas -  todasAsSenhas()");
 		return iPainelGerenteService.todasAsSenhas();
 	}
 
 	@RequestMapping(value="zerar-contador",  method = RequestMethod.GET)
 	public @ResponseBody Message zerarContador(){
+		LOGGER.info("Zerado o contador - zerarContador()");
 		return iPainelGerenteService.zeraContadorSenha();
-		
-	}
-	
-	@RequestMapping("painel")
-	public String painel() {
-		return "painel";
 	}
 }

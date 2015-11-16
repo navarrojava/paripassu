@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
  *
  */
 @Controller
-public class HomeController {
+public class IndexController {
 
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
+	// Sobre o static, no Logger --> http://slf4j.org/faq.html#declared_static
+	private static final Logger LOGGER = LoggerFactory.getLogger(IndexController.class);
+
 	@RequestMapping("/")
 	public String index() {
-	logger.info("Novo Acesso");	
+		LOGGER.info("Novo acesso ao index");
 		return "index";
 	}
-	
 }

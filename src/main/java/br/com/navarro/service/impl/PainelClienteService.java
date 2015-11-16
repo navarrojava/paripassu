@@ -12,25 +12,33 @@ public class PainelClienteService implements IPainelClienteService {
 
 	@Autowired
 	private MemoryDatabase memoryDatabase;
-
 	private int contadorNormal = 1;
 	private int contadorPreferencial = 1;
+	private int idContador = 0;
 
+	@Override
 	public Senha solicitaSenha(Senha.TipoSenha tipoSenha) {
-		int numeroSenha = contadorNormal++;
-		Senha senha = new Senha();
-		
-		senha.setId(numeroSenha + 1);
-		senha.setNumero(numeroSenha);
-		senha.setTipoSenha(tipoSenha);
-		
-		senha.setMascaraSenha(tipoSenha + String.format("%04d", numeroSenha));
-		
-		senha = memoryDatabase.geraSenha(senha, tipoSenha);
-		return senha;
+
+		// FIXME: MOVER PARA A CLASSE MemoryDatabase.java
+		// return memoryDatabase.geraSenha(tipoSenha);
+
+		switch (tipoSenha) {
+		case NORMAL:
+//			return memoryDatabase.geraSenha(new Senha(idContador++, contadorNormal++, tipoSenha, true), tipoSenha);
+			return memoryDatabase.geraSenha(tipoSenha);
+
+		case PREFERENCIAL:
+			return memoryDatabase.geraSenha(tipoSenha);
+		default:
+			return new Senha();
+		}
 	}
 
-	
+	@Override
+	public Senha verificaSeFoiChamado(Senha senha) {
+		return memoryDatabase.pegaUma(senha);
+	}
+
 	/* Getetrs e Setters */
 	public int getContadorNormal() {
 		return contadorNormal;
@@ -47,4 +55,13 @@ public class PainelClienteService implements IPainelClienteService {
 	public void setContadorPreferencial(int contadorPreferencial) {
 		this.contadorPreferencial = contadorPreferencial;
 	}
+
+	public int getIdContador() {
+		return idContador;
+	}
+
+	public void setIdContador(int idContador) {
+		this.idContador = idContador;
+	}
+
 }

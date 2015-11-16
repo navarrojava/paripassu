@@ -17,10 +17,9 @@ import org.springframework.web.filter.OncePerRequestFilter;
  */
 
 public class CORSFilter extends OncePerRequestFilter {
+
 	private static final Logger LOG = LoggerFactory.getLogger(CORSFilter.class);
 	
-
-
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
@@ -36,5 +35,4 @@ public class CORSFilter extends OncePerRequestFilter {
 
 		filterChain.doFilter(request, response);
 	}
-
 }
