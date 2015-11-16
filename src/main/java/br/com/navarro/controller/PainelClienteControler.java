@@ -39,8 +39,9 @@ public class PainelClienteControler {
 	
 	@RequestMapping("verifica-se-fui-chamado")
 	@ResponseBody
-    public Senha verificaSeFuiChamado(@RequestBody Senha senha){
+    public Senha verificaSeFuiChamado(@RequestBody  Senha senha) { 
 		return iPainelUsuarioService.verificaSeFoiChamado(senha);
+		
 	}
 	
 }

@@ -17,3 +17,8 @@
 .form-control {
 	margin-top: 5px;
 }
+
+.text-custom {
+	font-size: 22px; 
+	text-align: center;
+}

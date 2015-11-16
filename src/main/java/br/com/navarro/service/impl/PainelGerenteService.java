@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import br.com.navarro.database.MemoryDatabase;
 import br.com.navarro.model.Message;
 import br.com.navarro.model.Senha;
-import br.com.navarro.service.IPainelClienteService;
 import br.com.navarro.service.IPainelGerenteService;
 
 @Service
@@ -16,9 +15,7 @@ public class PainelGerenteService implements IPainelGerenteService {
 
 	@Autowired
 	MemoryDatabase memoryDatabase;
-	@Autowired
-	IPainelClienteService iPainelClienteService;
-
+	
 	@Override
 	public Senha chamaProximaSenha() {
 		return memoryDatabase.proximaSenha();
@@ -32,8 +29,6 @@ public class PainelGerenteService implements IPainelGerenteService {
 	@Override
 	public Message zeraContadorSenha() {
 		memoryDatabase.deletaTodasAsSenhas();
-		iPainelClienteService.setContadorNormal(0);
-		iPainelClienteService.setContadorPreferencial(0);
 		return new Message(1, "Painel zerado com sucesso!");
 	}
 }

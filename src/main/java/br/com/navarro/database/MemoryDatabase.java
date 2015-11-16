@@ -18,12 +18,10 @@ public class MemoryDatabase {
 
 	private List<Senha> senhasNormais = new ArrayList<Senha>();
 	private List<Senha> senhasPreferenciais = new ArrayList<Senha>();
-	
-	
+
 	private int contadorNormal = 0;
 	private int contadorPreferencial = 0;
 	private int idContador = 0;
-
 
 	public Senha proximaSenha() {
 		if (Validator.isValid(senhasPreferenciais)) {
@@ -43,20 +41,17 @@ public class MemoryDatabase {
 		return null;
 	}
 
-	// FIXME: MELHORAR A LOGICA, ATRIBUTOS CONTADORES DEVEM ESTAR NESTA CLASSE.
 	public Senha geraSenha(Senha.TipoSenha tipoSenha) {
-		
-		
-		
+
 		switch (tipoSenha) {
+		
 		case NORMAL:
-			
-			 senhasNormais.add(new Senha(idContador++, contadorNormal++, tipoSenha, true));
-			return senhasNormais.get(contadorNormal -1);
+			senhasNormais.add(new Senha(idContador++, contadorNormal++, tipoSenha, true));
+			return new Senha(idContador++, contadorNormal, tipoSenha, true);
 		case PREFERENCIAL:
 			senhasPreferenciais.add(new Senha(idContador++, contadorPreferencial++, tipoSenha, true));
-			return senhasPreferenciais.get(contadorPreferencial -1);
-			
+			return new Senha(idContador++, contadorPreferencial, tipoSenha, true);
+
 		default:
 			break;
 		}
@@ -66,20 +61,25 @@ public class MemoryDatabase {
 	public void deletaTodasAsSenhas() {
 		senhasNormais.clear();
 		senhasPreferenciais.clear();
+		contadorNormal = 0;
+		contadorPreferencial = 0;
 	}
 
-	public Senha pegaUma(Senha senhaParam) {
+	public Senha getSenha(Senha senhaParam) {
 		if (senhaParam != null) {
+
 			switch (senhaParam.getTipoSenha()) {
 			case PREFERENCIAL:
 				for (Senha senha : senhasPreferenciais) {
 					if (senhaParam.getId() == senha.getId())
-						return senhaParam;
+						System.out.println("Senha Param: " + senhaParam.getId() + " SenhasPref..." + senha.getId());
+					return senhaParam;
 				}
 			case NORMAL:
 				for (Senha senha : senhasNormais) {
 					if (senhaParam.getId() == senha.getId())
-						return senhaParam;
+						System.out.println("Senha Param: " + senhaParam.getId() + " Normais..." + senha.getId());
+					return senhaParam;
 				}
 			default:
 				break;

@@ -1,32 +1,21 @@
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="false"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet"
-	href="<c:url value="/resources/css/bootstrap.min.css" />" />
-<link rel="stylesheet"
-	href="<c:url value="/resources/css/custom.css" />" />
-
-
+<title>Sistema de gerenciamento de senhas</title>
+<link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.min.css" />" />
+<link rel="stylesheet" href="<c:url value="/resources/css/custom.css" />" />
 </head>
 <body>
-
-
 	<div class="jumbotron">
-		<h2>Seja bem vindo </h2>
-		<p>Sistema de gerenciamento de senhas</p>
+		<h2>Seja Bem vindo </h2>
+		<h4>Sistema de gerenciamento de senhas</h4>
 		<p>
-		  	<a class="btn form-control btn-primary btn-lg" href="painel/home" role="button">Painel Publico</a>
-			<a class="btn form-control btn-primary btn-lg" href="gerente/home" role="button">Gerente</a>
+		  	<a class="btn btn-primary btn-block" href="painel/home" role="button">Painel Público</a>
+			<a class="btn btn-primary btn-block" href="gerente/home" role="button">Painel Gerente</a>
 		</p>
 	</div>
-
-
-
-
 </body>
 </html>

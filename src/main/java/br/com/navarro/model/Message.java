@@ -1,9 +1,11 @@
 package br.com.navarro.model;
+
 /**
  * 
  * @author navarro
  *
  */
+
 public class Message {
 	
 	private int id;
