@@ -6,4 +6,5 @@ import br.com.navarro.service.IPainelSenhaService;
 
 @Service
 public class PainelSenhaService implements IPainelSenhaService {
+	
 }

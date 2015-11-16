@@ -66,7 +66,7 @@ public class MemoryDatabase {
 	}
 
 	public Senha getSenha(Senha senhaParam) {
-		if (senhaParam != null) {
+		if (Validator.isValid(senhaParam)) {
 
 			switch (senhaParam.getTipoSenha()) {
 			case PREFERENCIAL:
