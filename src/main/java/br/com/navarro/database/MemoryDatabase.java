@@ -47,10 +47,10 @@ public class MemoryDatabase {
 		
 		case NORMAL:
 			senhasNormais.add(new Senha(idContador++, contadorNormal++, tipoSenha, true));
-			return new Senha(idContador++, contadorNormal, tipoSenha, true);
+			return senhasNormais.get(senhasNormais.size() -1);
 		case PREFERENCIAL:
 			senhasPreferenciais.add(new Senha(idContador++, contadorPreferencial++, tipoSenha, true));
-			return new Senha(idContador++, contadorPreferencial, tipoSenha, true);
+			return senhasPreferenciais.get(senhasPreferenciais.size() -1);
 
 		default:
 			break;
